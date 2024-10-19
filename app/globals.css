@@ -215,6 +215,9 @@ select {
 */
 
 @media screen and (max-width: 580px) {
+  textarea,
+  input,
+  .btn,
   body {
     font-size: 1.3rem;
   }
@@ -233,6 +236,6 @@ select {
   }
 
   ul.Home_taskList__RXyl_ {
-    max-height: 100vh;
+    max-height: calc(100vh - 4rem);
   }
 }

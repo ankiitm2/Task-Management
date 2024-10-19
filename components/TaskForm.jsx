@@ -11,7 +11,11 @@ export default function TaskForm({ addTask, editTask, existingTask }) {
     if (existingTask) {
       setTitle(existingTask.title);
       setDescription(existingTask.description);
-      setPriority(existingTask.setPriority);
+      setPriority(existingTask.priority || "medium");
+    } else {
+      setTitle("");
+      setDescription("");
+      setPriority("medium");
     }
   }, [existingTask]);
 
@@ -49,12 +53,12 @@ export default function TaskForm({ addTask, editTask, existingTask }) {
         required
       />
       <select value={priority} onChange={(e) => setPriority(e.target.value)}>
-        <option value="high">High</option>
-        <option value="medium">Medium</option>
         <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
       </select>
       <button type="submit" className="btn">
-        Add Task
+        {existingTask ? "Update" : "Add"}
       </button>
     </form>
   );
