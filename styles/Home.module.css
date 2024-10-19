@@ -1,0 +1,41 @@
+.taskList {
+  list-style-type: none;
+  padding: 0;
+  max-height: 20rem;
+  overflow: auto;
+  scrollbar-width: thin;
+}
+
+.taskList li {
+  border: 1px solid;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.form {
+  background-color: #272727;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.form h1 {
+  margin-top: 0;
+}
+
+.filters {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.flexBox2,
+.flexBox {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.flexBox2 {
+  justify-content: space-between;
+}
