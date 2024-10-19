@@ -208,3 +208,23 @@ select {
   transition: all 0.2s linear;
   transition-delay: 0.15s;
 }
+
+/* 
+----------------
+----------------
+*/
+
+@media screen and (max-width: 480px) {
+  textarea,
+  input {
+    width: 100%;
+  }
+
+  .btn {
+    flex: 1;
+  }
+
+  .flexBox2 {
+    flex-direction: column;
+  }
+}
