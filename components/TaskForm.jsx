@@ -1,11 +1,12 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/Home.module.css";
 
 export default function TaskForm({ addTask, editTask, existingTask }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [priority, setPriority] = useState("medium");
+  const titleInputRef = useRef(null);
 
   useEffect(() => {
     if (existingTask) {
@@ -19,8 +20,13 @@ export default function TaskForm({ addTask, editTask, existingTask }) {
     }
   }, [existingTask]);
 
+  useEffect(() => {
+    titleInputRef.current?.focus();
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (existingTask) {
       editTask({ ...existingTask, title, description, priority });
     } else {
@@ -32,6 +38,7 @@ export default function TaskForm({ addTask, editTask, existingTask }) {
         completed: false,
       });
     }
+
     setTitle("");
     setDescription("");
     setPriority("medium");
@@ -44,6 +51,7 @@ export default function TaskForm({ addTask, editTask, existingTask }) {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         placeholder="Task Title"
+        ref={titleInputRef}
         required
       />
       <textarea
@@ -58,7 +66,7 @@ export default function TaskForm({ addTask, editTask, existingTask }) {
         <option value="high">High</option>
       </select>
       <button type="submit" className="btn">
-        {existingTask ? "Update" : "Add"}
+        {existingTask ? "Update Task" : "Add Task"}
       </button>
     </form>
   );

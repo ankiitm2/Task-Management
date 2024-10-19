@@ -5,7 +5,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100dvh;
+  min-height: 100dvh;
   background-color: #000;
   color: #fff;
 }
@@ -54,7 +54,9 @@ input {
 textarea::placeholder,
 input::placeholder {
   color: #9a9a9a;
-  vertical-align: middle;
+  vertical-align: middle !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 textarea:hover,
@@ -194,16 +196,16 @@ select {
   stroke: #4285f4;
 }
 
-.input-container #cbx:checked + .check svg {
+.input-container input:checked + .check svg {
   stroke: #4285f4;
 }
 
-.input-container #cbx:checked + .check svg path {
+.input-container input:checked + .check svg path {
   stroke-dashoffset: 60;
   transition: all 0.3s linear;
 }
 
-.input-container #cbx:checked + .check svg polyline {
+.input-container input:checked + .check svg polyline {
   stroke-dashoffset: 42;
   transition: all 0.2s linear;
   transition-delay: 0.15s;
@@ -233,9 +235,5 @@ select {
 
   .Home_flexBox2__CKGhK {
     flex-direction: column;
-  }
-
-  ul.Home_taskList__RXyl_ {
-    max-height: calc(100vh - 4rem);
   }
 }
