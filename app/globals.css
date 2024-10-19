@@ -214,7 +214,7 @@ select {
 ----------------
 */
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 580px) {
   textarea,
   input {
     width: 100%;
@@ -224,7 +224,7 @@ select {
     flex: 1;
   }
 
-  .flexBox2 {
+  .Home_flexBox2__CKGhK {
     flex-direction: column;
   }
 }
